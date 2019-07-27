@@ -1,0 +1,150 @@
+$gray: #666;
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.row {
+    padding: 3rem 0;
+    position: relative;
+}
+.flex {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    .flex-one {
+        flex: 1;
+    }
+    .flex-two {
+        flex: 2;
+    }
+    .flex-three {
+        flex: 3;
+    }
+}
+.clr{
+    clear: both;
+}
+.d-none {
+    display: none !important;
+}
+.center{
+    text-align: center;
+}
+//---------------pading
+@for $i from 1 through 5 {
+    .p-#{$i} {
+        padding: #{$i * 1}rem;
+    }
+
+    .pt-#{$i} {
+        padding-top: #{$i * 1}rem;
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$i * 1}rem;
+    }
+    .py-#{$i} {
+        padding-top: #{$i * 1}rem;
+        padding-bottom: #{$i * 1}rem;
+    }
+
+    .pl-#{$i} {
+        padding-left: #{$i * 1}rem;
+    }
+
+    .pr-#{$i} {
+        padding-right: #{$i * 1}rem;
+    }
+    .px-#{$i} {
+        padding-left: #{$i * 1}rem;
+        padding-right: #{$i * 1}rem;
+    }
+}
+//---------------margin
+@for $i from 1 through 5 {
+    .m-#{$i} {
+        margin: #{$i * 1}rem;
+    }
+
+    .mt-#{$i} {
+        margin-top: #{$i * 1}rem;
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$i * 1}rem;
+    }
+    .my-#{$i} {
+        margin-top: #{$i * 1}rem;
+        margin-bottom: #{$i * 1}rem;
+    }
+
+    .ml-#{$i} {
+        margin-left: #{$i * 1}rem;
+    }
+
+    .mr-#{$i} {
+        margin-right: #{$i * 1}rem;
+    }
+    .mx-#{$i} {
+        margin-left: #{$i * 1}rem;
+        margin-right: #{$i * 1}rem;
+    }
+}
+//shadows
+.shadow {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+//white-shadow
+.white-shadow{
+    box-shadow: 0px 20px 54px white;
+}
+
+//gray
+.gray{
+    color: $gray;
+}
+.plussign{
+    color: $secondary;
+}
+//button ha
+.btn {
+    z-index: 1;
+    position: relative;
+    display: block;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-family: inherit;
+    background-color: $primary;
+    font-size: 0.8rem;
+    // color: black;
+    color: lighten($color: $primary, $amount: 50);
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+text-transform: capitalize;
+}
+
+.btn::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: $secondary;
+    transform-origin: center right;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+    transition-delay: 0.2s;
+    // transition: color 0.25s ease-in-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.btn:hover::before {
+    transform-origin: center left;
+    transform: scaleX(1);
+}
