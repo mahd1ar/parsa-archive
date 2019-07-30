@@ -5,13 +5,36 @@ $primary-dark: darken(#005dff, 40%);
 $accent: #fff6bb;
 
 // responsive layout
-$desktop: 840px;
+$small: 576px;
+$medium: 768px;
+$tablet: 840px;
+$desktop: 960px;
 $navbarbreack: 995px;
 $widescreen: 1200px;
 $superwidescreen: 1400px;
 
+@mixin small {
+    @media (max-width: #{$small}) {
+        @content;
+    }
+}
+@mixin medium {
+    @media (max-width: #{$medium}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
 @mixin desktop {
     @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin navbarbreack {
+    @media (max-width: #{$navbarbreack}) {
         @content;
     }
 }
@@ -61,29 +84,55 @@ html {
 }
 //main navbar
 #close {
+    cursor: pointer;
+    background-color: #f7f1e3;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
     display: none;
-    @include desktop {
+    color: #b33939;
+    font-size: 22px;
+    @include navbarbreack() {
         display: block;
     }
 }
 #smallmenu {
     display: none;
-    @include desktop {
-        display: block;
+    @include navbarbreack {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: #fff;
+        img {
+            padding-right: 2rem;
+            display: inline-block;
+        }
     }
 }
+
 #x {
     i {
         font-size: 2rem;
+        padding: 2rem;
+        @include small() {
+            padding: 1rem 2rem;
+        }
     }
 }
 .swupDown {
     transform: translateY(0);
     transition: all 0.6s ease-out;
+    z-index: 3;
 }
 nav {
     background-color: #fefefe;
-    @include desktop {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    @include navbarbreack() {
         height: 100vh;
         width: 100vw;
         position: fixed;
@@ -100,8 +149,17 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+#parsa-small {
+    width: 150px;
+    @include small() {
+        width: 130px;
+    }
+}
 #parsa {
     display: block;
+    @include navbarbreack() {
+        display: none;
+    }
 }
 .list {
     // display: flex;
@@ -109,7 +167,7 @@ nav {
     direction: rtl;
     position: relative;
     text-transform: capitalize;
-    @include desktop {
+    @include navbarbreack() {
         display: flex;
         flex-direction: column;
         align-items: baseline;
@@ -121,7 +179,7 @@ nav {
     display: inline-block;
     padding: 1.2rem 0.5rem;
     position: relative;
-    @include desktop {
+    @include navbarbreack() {
         display: flex;
         align-items: flex-start;
         font-size: 1.5rem;
@@ -129,7 +187,7 @@ nav {
 }
 
 .list-down {
-    @include desktop {
+    @include navbarbreack {
         position: relative;
         padding: 0;
         margin: 0;
@@ -154,8 +212,12 @@ nav {
     visibility: visible;
     opacity: 1;
     transform: translateY(0rem);
-    @include desktop {
+    transition: all 0.5s;
+    @include navbarbreack() {
         height: 100%; //mishe
+
+        width: 230px;
+        margin-left: 50px;
         // height: 0px;
     }
     & li:hover {
@@ -187,6 +249,9 @@ nav {
         font-family: inherit;
         letter-spacing: 3px;
     }
+    @include medium() {
+        margin-bottom: 12px;
+    }
 }
 
 #slider {
@@ -203,18 +268,44 @@ nav {
             width: 100%;
         }
     }
+    @include medium() {
+        flex-direction: column-reverse;
+    }
 }
 .slider-text {
     flex: 1;
     padding-left: calc(50vw - 585px + 1rem);
     padding-right: 2rem;
+    h1 {
+        margin-bottom: 14px;
+        // line-height: 32px;
+    }
 
     @include widescreen() {
         padding-left: 1rem;
+        text-align: center;
     }
 }
 .slider-pic {
     flex: 2;
+}
+
+span.call-us {
+    @include widescreen() {
+        display: block;
+        margin-bottom: 6px;
+        letter-spacing: 6px;
+    }
+    @include navbarbreack() {
+        display: none;
+    }
+
+    @include medium() {
+        display: inline-block;
+    }
+    @include small() {
+        display: none;
+    }
 }
 //----------- end of slider ---------------
 //----------- Services --------------------
@@ -281,6 +372,9 @@ nav {
         // flex: 1;
         flex-basis: 270px;
         margin: 1.2rem 0;
+        @include small() {
+            flex-basis: 200px;
+        }
     }
 }
 .service-item {
@@ -332,6 +426,24 @@ nav {
         font-size: 2.75rem;
         letter-spacing: 0.4rem;
     }
+    h3 {
+        @include tablet() {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+#vid-desc {
+    @include tablet() {
+        flex-direction: column-reverse;
+    }
+
+    div {
+        flex: 1;
+        @include tablet() {
+            width: 100%;
+        }
+    }
 }
 //---------------end of Vid---------
 //---------------STEP BY STEP------------
@@ -345,6 +457,8 @@ nav {
     z-index: -1;
     @include widescreen() {
         right: 0px;
+    }
+    @include tablet() {
     }
 }
 #steps-title-parent {
@@ -661,7 +775,7 @@ ul#steps-desc {
         }
     }
 }
-.tns-outer {
+#tns1-ow {
     width: 600px;
 }
 #flag-sec {
@@ -703,14 +817,15 @@ ul#steps-desc {
 .my-gallery {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
     img {
         flex-wrap: wrap;
         width: 100%;
         height: auto;
         filter: grayscale(0.7) brightness(120%);
         transition: all 0.3s ease-in-out;
-        &:hover{
+        &:hover {
             filter: none;
         }
     }
@@ -730,6 +845,30 @@ ul#steps-desc {
 }
 
 //end of WORK SAMPLE
+
+//Hospitals
+
+#hospitals {
+    img {
+        cursor: pointer;
+        border-radius: 12px;
+        filter: contrast(1);
+    }
+    p {
+        margin-top: 8px;
+        font-size: 20px !important;
+        text-transform: capitalize;
+        border-left: 3px solid #00b6e5;
+        padding-left: 8px;
+        // &::before{
+        //     content: "- ";
+        //     color: #13436d;
+        //     font-weight: 600;
+        //     font-size: 22px;
+        // }
+    }
+}
+//End of Hospitals
 
 //===========FOOTER SEC =========>
 

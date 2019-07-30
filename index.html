@@ -13,7 +13,6 @@
     <!-- my stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <!-- font awesome -->
-
     <script src="https://kit.fontawesome.com/923e628944.js"></script>
     <!-- map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -50,29 +49,31 @@
     <!-- main navbar -->
     <div id="smallmenu">
         <span id="x"><i class="fas fa-bars"></i></span>
+        <a href="/" id="parsa-small">
+            <img src="png/logo.png" alt="">
+        </a>
     </div>
     <nav>
         <div class="container" id="nav-and-logo">
-            <div id="close" onclick="
+            <a href="/" id="parsa">
+                <img src="png/logo.png" width="170px" alt="">
+            </a>
+            <ul class="list">
+                <div id="close" onclick="
                 document.querySelector('nav').classList.add('fade-out-bck');
                 setTimeout(() => {
                     document.querySelector('nav').classList.remove('fade-out-bck');
                     document.querySelector('nav').classList.remove('swupDown');
                 }, 700);
                 "><i class="fas fa-times"></i></div>
-            <a href="/" id="parsa">
-                <img src="png/logo.png" width="170px" alt="">
-            </a>
-            <ul class="list">
-                <a href="#map-sec">
+
+                <a href="#">
                     <li class="list-item">about us</li>
                 </a>
                 <a href="#">
                     <li class="list-item">free consulting</li>
                 </a>
-                <a href="#">
-                    <li class="list-item">blog</li>
-                </a>
+
                 <a href="#">
                     <li class="list-item">Patient reviews</li>
                 </a>
@@ -120,7 +121,9 @@
             The assist patients in accessing high quality medical care in Iran
             <br>
             <a href="tel:+989102124368">
-                <button class="call">call us: <i class="fas fa-phone-alt"></i>
+                <button class="call">
+                    <span class="call-us">call us:</span>
+                    <i class="fas fa-phone-alt"></i>
                     <span> +98 910-212-4368</span>
                 </button></a>
         </div>
@@ -207,7 +210,7 @@
     <section id="vid">
         <div class="row">
             <h1 class="center my-2"><span class="plussign">+</span>how it works?</h1>
-            <div class="container flex">
+            <div id="vid-desc" class="container flex">
 
                 <div class="flex-one p-1">
                     <!-- <div style="border: #57ccc3 8px solid; border-radius: 4px" id="80136840585"><script type="text/JavaScript" src="https://www.aparat.com/embed/qNjfH?data[rnddiv]=80136840585&data[responsive]=yes"></script></div> -->
@@ -414,14 +417,8 @@
     </section>
 
 
-
-
-
-
-
-
     <section>
-            <h1 class="sec-title"><span class="plussign">+</span> Patient stories</h1>
+        <h1 class="sec-title"><span class="plussign">+</span> Patient stories</h1>
         <div class="container">
             <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 
@@ -524,19 +521,55 @@
                     <div class="pswp__caption">
                         <div class="pswp__caption__center"></div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
 
+    <section id="hospitals">
+        <div class="row">
+            <div class="container">
+                <h1 class="sec-title"><span class="plussign">+</span> hospitals</h1>
+
+                <div class="hospital-slider">
+                    <a>
+                        <div><img src="imges/h/pastorno.jpg" alt="">
+                            <p>pasto hospital</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div><img src="imges/h/atiye.jpg" alt="">
+                            <p>atiye hospital</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div><img src="imges/h/bahman.jpg" alt="">
+                            <p>bahman hospital</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div><img src="imges/h/farabi.jpg" alt="">
+                            <p>farabi hospital</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div><img src="imges/h/mohebCosar.jpg" alt="">
+                            <p>mohebecosar hospital</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div><img src="imges/h/mohebMehr.jpg" alt="">
+                            <p>mohebe mehr hospital</p>
+                        </div>
+                    </a>
+
+                </div>
 
 
-
+            </div>
+        </div>
+    </section>
 
 
 
@@ -580,9 +613,6 @@
 
         </div>
     </section>
-
-
-
 
     <footer>
         <div class="canvas-container">
@@ -639,7 +669,6 @@
                 <a href="#">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-
             </div>
 
 

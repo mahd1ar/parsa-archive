@@ -25,6 +25,23 @@ window.onload = () => {
         controlsContainer: false
     });
 
+    let hospitals = tns({
+        container: '.hospital-slider',
+        items: 4,
+        slideBy: 'page',
+        autoplay: true,
+        autoplayHoverPause: true,
+        autoplayTimeout: 4000,
+        gutter:50,
+        speed: 1200,
+        autoplayText: false,
+        autoplayButtonOutput: false,
+        // autoplayButton: false,
+        mouseDrag: true,
+        swipeAngle: false,
+        controlsContainer: false
+    });
+
     document.querySelectorAll('[aria-label').forEach(x=>{
         x.style.display = "none"
     })
@@ -64,8 +81,7 @@ xbtn.addEventListener('click', (e) => {
 
 
 // step by step
-// const step = document.querySelectorAll('#steps-title>li');
-// console.log('step.lenght', step.length,step);
+
 document.querySelector('#steps-title').addEventListener('click', e => {
     c = e.target.parentElement.classList.value
     regex = /step-\d/g;
