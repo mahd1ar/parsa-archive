@@ -32,7 +32,7 @@ window.onload = () => {
         autoplay: true,
         autoplayHoverPause: true,
         autoplayTimeout: 4000,
-        gutter:50,
+        gutter: 50,
         speed: 1200,
         autoplayText: false,
         autoplayButtonOutput: false,
@@ -42,12 +42,17 @@ window.onload = () => {
         controlsContainer: false
     });
 
-    document.querySelectorAll('[aria-label').forEach(x=>{
+    document.querySelectorAll('[aria-label').forEach(x => {
         x.style.display = "none"
     })
 
-    // vivus
-   
+    //mm menu
+    new Mmenu(document.querySelector('#menu'), {
+        "extensions": [
+            "pagedim-black"
+        ]
+    });
+
 }
 
 

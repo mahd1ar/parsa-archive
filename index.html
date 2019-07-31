@@ -19,6 +19,8 @@
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
     <script src="lib/smooth-parallax.min.js"></script>
+    <!-- mm menu style -->
+    <link rel="stylesheet" href="lib/mmenu.css">
     <link rel="stylesheet" href="lib/animate.min.css">
     <!-- photoswipe -->
     <link rel="stylesheet" href="lib/photoswipe.css">
@@ -28,38 +30,70 @@
 </head>
 
 <body debu>
-    <!-- top-navbar -->
-    <div id="top-navbar">
-        <div class="container">
-            <div id="top-navbar-content">
-                <div class="top-nav-left">
-                    <span> call us now</span>
-                    <span><i class="fa fa-map-marker-alt"></i></span>
-                    <span>info@parsa-healthcare.com</span>
-                    <span><i class="fa fa-envelope"></i></span>
-                </div>
-                <div class="top-nav-right">
-                    <span><i class="fab fa-instagram"></i> Instagram</span>
-                    <span><i class="fab fa-whatsapp"></i> whatsapp</span>
+    <div id="page">
+        <!-- top-navbar -->
+        <div id="top-navbar">
+            <div class="container">
+                <div id="top-navbar-content">
+                    <div class="top-nav-left">
+                        <span> call us now</span>
+                        <span><i class="fa fa-map-marker-alt"></i></span>
+                        <span>info@parsa-healthcare.com</span>
+                        <span><i class="fa fa-envelope"></i></span>
+                    </div>
+                    <div class="top-nav-right">
+                        <span><i class="fab fa-instagram"></i> Instagram</span>
+                        <span><i class="fab fa-whatsapp"></i> whatsapp</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end of top-navbar -->
-    <!-- main navbar -->
-    <div id="smallmenu">
-        <span id="x"><i class="fas fa-bars"></i></span>
-        <a href="/" id="parsa-small">
-            <img src="png/logo.png" alt="">
-        </a>
-    </div>
-    <nav>
-        <div class="container" id="nav-and-logo">
-            <a href="/" id="parsa">
-                <img src="png/logo.png" width="170px" alt="">
+        <!-- end of top-navbar -->
+
+
+
+        <!-- mm menu -->
+        <div id="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><span>About us</span>
+                    <ul>
+                        <li><a href="#about/history">History</a></li>
+                        <li><span>The team</span>
+                            <ul>
+                                <li><a href="#about/team/management">Management</a></li>
+                                <li><a href="#about/team/sales">Sales</a></li>
+                                <li><a href="#about/team/development">Development</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#about/address">Our address</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+
+                <li class="Divider">Other demos</li>
+                <li><a href="advanced.html">Advanced demo</a></li>
+                <li><a href="onepage.html">One page demo</a></li>
+            </ul>
+        </div>
+
+
+
+
+        <!-- main navbar -->
+        <div id="smallmenu" class="Sticky">
+            <span id="x"><i class="fas fa-bars"></i></span>
+            <a href="#menu" id="parsa-small" class="no-select">
+                <img src="png/logo.png" alt="" class="no-select">
             </a>
-            <ul class="list">
-                <div id="close" onclick="
+        </div>
+        <nav>
+            <div class="container" id="nav-and-logo">
+                <a href="/" id="parsa">
+                    <img src="png/logo.png" width="170px" alt="">
+                </a>
+                <ul class="list">
+                    <div id="close" onclick="
                 document.querySelector('nav').classList.add('fade-out-bck');
                 setTimeout(() => {
                     document.querySelector('nav').classList.remove('fade-out-bck');
@@ -67,667 +101,681 @@
                 }, 700);
                 "><i class="fas fa-times"></i></div>
 
-                <a href="#">
-                    <li class="list-item">about us</li>
-                </a>
-                <a href="#">
-                    <li class="list-item">free consulting</li>
-                </a>
+                    <a href="#">
+                        <li class="list-item">about us</li>
+                    </a>
+                    <a href="#">
+                        <li class="list-item">free consulting</li>
+                    </a>
 
-                <a href="#">
-                    <li class="list-item">Patient reviews</li>
-                </a>
-                <a href="#">
-                    <li class="list-item">packages</li>
-                </a>
-                <a href="#">
-                    <li class="list-item" data-dropdown>information
-                        <ul class="list-down">
-                            <li class="list-item-down">hospitals </li>
-                            <li class="list-item-down">doctors</li>
-                            <li class="list-item-down">informaive guide</li>
-                        </ul>
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="list-item" data-dropdown>procedures
-                        <ul class="list-down">
-                            <li class="list-item-down">Rhinoplasty</li>
-                            <li class="list-item-down">Weight loss surgery</li>
-                            <li class="list-item-down">Hair transplant</li>
-                            <li class="list-item-down">cosmetic dentistry</li>
-                            <li class="list-item-down">Plastic surgery</li>
-                            <li class="list-item-down">eye surgery</li>
-                            <li class="list-item-down">Knee replacement</li>
-                        </ul>
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="list-item">home</li>
-                </a>
+                    <a href="#">
+                        <li class="list-item">Patient reviews</li>
+                    </a>
+                    <a href="#">
+                        <li class="list-item">packages</li>
+                    </a>
+                    <a href="#">
+                        <li class="list-item" data-dropdown>information
+                            <ul class="list-down">
+                                <li class="list-item-down">hospitals </li>
+                                <li class="list-item-down">doctors</li>
+                                <li class="list-item-down">informaive guide</li>
+                            </ul>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="list-item" data-dropdown>procedures
+                            <ul class="list-down">
+                                <li class="list-item-down">Rhinoplasty</li>
+                                <li class="list-item-down">Weight loss surgery</li>
+                                <li class="list-item-down">Hair transplant</li>
+                                <li class="list-item-down">cosmetic dentistry</li>
+                                <li class="list-item-down">Plastic surgery</li>
+                                <li class="list-item-down">eye surgery</li>
+                                <li class="list-item-down">Knee replacement</li>
+                            </ul>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="list-item">home</li>
+                    </a>
 
-            </ul>
+                </ul>
 
-        </div>
-    </nav>
-
-    <!--end of main navbar -->
-
-    <!-- [aria-label="Carousel"] -->
-    <!-- slider section -->
-    <section id="slider">
-        <div class="slider-text">
-            <h1>Find the most advanced and affordable treatment </h1>
-            The assist patients in accessing high quality medical care in Iran
-            <br>
-            <a href="tel:+989102124368">
-                <button class="call">
-                    <span class="call-us">call us:</span>
-                    <i class="fas fa-phone-alt"></i>
-                    <span> +98 910-212-4368</span>
-                </button></a>
-        </div>
-        <div class="slider-pic">
-
-            <img src="./imges/slider.jpg" alt="">
-        </div>
-    </section>
-    <!-- end of slider section -->
-    <!-- services -->
-    <section id="srv-section">
-        <!-- <div id="piece-of-bg">X</div> -->
-        <img src="svg/plus.svg" id="plus" alt="" style="bottom: -100px">
-
-
-        <h1><span class="plussign">+</span>popular treatments</h1>
-        <div class="container" id="services">
-            <div class="srv-container">
-                <div class="service-item shadow">
-                    <img src="png/nosejaob.png" alt="">
-                    <h2>
-                        nose job
-                    </h2>
-                    <a href="#">see more</a>
-                </div>
-                <div class="service-item shadow">
-                    <img src="png/face.png" alt="">
-                    <h2>
-                        Plastic
-                        Surgery
-                    </h2>
-                    <a href="#">see more</a>
-                </div>
-                <div class="service-item shadow">
-                    <img src="png/smail.png" alt="">
-                    <h2>
-                        Cosmetic
-                        Dentistry
-                    </h2>
-                    <a href="#">see more</a>
-                </div>
-                <div class="service-item shadow">
-                    <img src="png/hair.png" alt="">
-                    <h2>
-                        hair transplant
-                    </h2>
-                    <a href="#">see more</a>
-                </div>
-                <div class="service-item shadow">
-                    <img src="png/WeightLoss.png" alt="">
-                    <h2>
-                        Weight Loss
-                    </h2>
-                    <a href="#">see more</a>
-                </div>
-                <div class="service-item shadow">
-                    <img src="png/eyeSurgery.png" alt="">
-                    <h2>
-                        eye surgery
-                    </h2>
-                    <a href="#">see more</a>
-                </div>
-                <div class="service-item shadow">
-                    <img src="png/knee.png" alt="">
-                    <h2>
-                        knee replacement
-                    </h2>
-                    <a href="#">see more</a>
-                </div>
             </div>
+        </nav>
 
-            <!-- <div class="srv-intro">
+        <!--end of main navbar -->
+
+        <!-- [aria-label="Carousel"] -->
+        <!-- slider section -->
+        <section id="slider">
+            <div class="slider-text">
+                <h1>Find the most advanced and affordable treatment </h1>
+                The assist patients in accessing high quality medical care in Iran
+                <br>
+                <a href="tel:+989102124368">
+                    <button class="call">
+                        <span class="call-us">call us:</span>
+                        <i class="fas fa-phone-alt"></i>
+                        <span> +98 910-212-4368</span>
+                    </button></a>
+            </div>
+            <div class="slider-pic">
+
+                <img src="./imges/slider.jpg" alt="">
+            </div>
+        </section>
+        <!-- end of slider section -->
+        <!-- services -->
+        <section id="srv-section">
+            <!-- <div id="piece-of-bg">X</div> -->
+            <img src="svg/plus.svg" id="plus" alt="" style="bottom: -100px">
+
+
+            <h1><span class="plussign">+</span>popular treatments</h1>
+            <div class="container" id="services">
+                <div class="srv-container">
+                    <div class="service-item shadow">
+                        <img src="png/nosejaob.png" alt="">
+                        <h2>
+                            nose job
+                        </h2>
+                        <a href="#">see more</a>
+                    </div>
+                    <div class="service-item shadow">
+                        <img src="png/face.png" alt="">
+                        <h2>
+                            Plastic
+                            Surgery
+                        </h2>
+                        <a href="#">see more</a>
+                    </div>
+                    <div class="service-item shadow">
+                        <img src="png/smail.png" alt="">
+                        <h2>
+                            Cosmetic
+                            Dentistry
+                        </h2>
+                        <a href="#">see more</a>
+                    </div>
+                    <div class="service-item shadow">
+                        <img src="png/hair.png" alt="">
+                        <h2>
+                            hair transplant
+                        </h2>
+                        <a href="#">see more</a>
+                    </div>
+                    <div class="service-item shadow">
+                        <img src="png/WeightLoss.png" alt="">
+                        <h2>
+                            Weight Loss
+                        </h2>
+                        <a href="#">see more</a>
+                    </div>
+                    <div class="service-item shadow">
+                        <img src="png/eyeSurgery.png" alt="">
+                        <h2>
+                            eye surgery
+                        </h2>
+                        <a href="#">see more</a>
+                    </div>
+                    <div class="service-item shadow">
+                        <img src="png/knee.png" alt="">
+                        <h2>
+                            knee replacement
+                        </h2>
+                        <a href="#">see more</a>
+                    </div>
+                </div>
+
+                <!-- <div class="srv-intro">
                 <h2>POPULAR TREAMENT</h2>
                 <button class="btn">SEE ALL</button>
             </div> -->
 
 
-        </div>
-    </section>
+            </div>
+        </section>
 
 
-    <!-- End of services -->
-    <!-- video section -->
-    <section id="vid">
-        <div class="row">
-            <h1 class="center my-2"><span class="plussign">+</span>how it works?</h1>
-            <div id="vid-desc" class="container flex">
+        <!-- End of services -->
+        <!-- video section -->
+        <section id="vid">
+            <div class="row">
+                <h1 class="center my-2"><span class="plussign">+</span>how it works?</h1>
+                <div id="vid-desc" class="container flex">
 
-                <div class="flex-one p-1">
-                    <!-- <div style="border: #57ccc3 8px solid; border-radius: 4px" id="80136840585"><script type="text/JavaScript" src="https://www.aparat.com/embed/qNjfH?data[rnddiv]=80136840585&data[responsive]=yes"></script></div> -->
-                </div>
-                <div class="flex-one p-1">
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum iusto mollitia nulla vero aperiam
-                        repudiandae quos numquam praesentium quas iste. Quae modi, mollitia numquam consequatur vero
-                        debitis vitae neque itaque est inventore optio facere vel placeat in iste eaque alias!</p>
+                    <div class="flex-one p-1">
+                        <!-- <div style="border: #57ccc3 8px solid; border-radius: 4px" id="80136840585"><script type="text/JavaScript" src="https://www.aparat.com/embed/qNjfH?data[rnddiv]=80136840585&data[responsive]=yes"></script></div> -->
+                    </div>
+                    <div class="flex-one p-1">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum iusto mollitia nulla vero
+                            aperiam
+                            repudiandae quos numquam praesentium quas iste. Quae modi, mollitia numquam consequatur vero
+                            debitis vitae neque itaque est inventore optio facere vel placeat in iste eaque alias!</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End of video section -->
-    <!-- begin of stepbystep -->
-    <section id="stepbystep">
-        <img src="svg/gooshi.svg" id="gooshi" alt="" style="bottom: -100px;" smooth-parallax="" start-position-y="-.4">
-        <div class="row">
-            <div class="container flex">
-                <div class="pl-1 py-2" id="steps-title-parent">
-                    <ul id="steps-title">
-                        <li class="step-1 selected">
-                            <span>01</span>
-                            <h4 style="display: inline;"> online support</h4>
-                        </li>
-                        <li class="step-2">
-                            <span>02</span>
-                            <h4 style="display: inline;"> medical consultion</h4>
-                        </li>
-                        <li class="step-3">
-                            <span>03</span>
-                            <h4 style="display: inline;">trip planning</h4>
-                        </li>
-                        <li class="step-4">
-                            <span>04</span>
-                            <h4 style="display: inline;">airport pickup</h4>
-                        </li>
-                        <li class="step-5">
-                            <span>05</span>
-                            <h4 style="display: inline;"> accommodation</h4>
-                        </li>
-                        <li class="step-6">
-                            <span>06</span>
-                            <h4 style="display: inline;">VIP hospitals</h4>
-                        </li>
-
-                        <li class="step-7">
-                            <span>07</span>
-                            <h4 style="display: inline;">recovery</h4>
-                        </li>
-                        <li class="step-8">
-                            <span>08</span>
-                            <h4 style="display: inline;"> sightseeing</h4>
-                        </li>
-                        <li class="step-9">
-                            <span>09</span>
-                            <h4 style="display: inline;">insurance</h4>
-                        </li>
-                        <li class="step-10">
-                            <span>10</span>
-                            <h4 style="display: inline;">keep in touch with doctor</h4>
-                        </li>
-
-                    </ul>
-                </div>
-                <div id="steps-desc-parent" class="p-1">
-                    <ul id="steps-desc">
-                        <li class="step-1 show">
-                            <img src="svg/call.svg" alt="">
-                            <h3>call expert</h3>
-
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea repudiandae aliquid ipsum
-                                quis aperiam praesentium repellendus vero nobis maxime, numquam tenetur est id, nesciunt
-                                qui, nulla harum nam debitis minima.
-                                Autem in odit, quidem est aliquam sunt repellat commodi veritatis, eligendi perferendis
-
-                            </p>
-                        </li>
-                        <li class="step-2 hide"> Lorem, ipsum dolor.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis eveniet sit non quo,
-                            obcaecati consectetur? Incidunt, odit perspiciatis quibusdam repellendus minus amet quidem,
-                            commodi labore in corporis voluptate adipisci dicta!
-                        </li>
-                        <li class="step-3 hide">
-                            Lorem, ipsum.<br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, id?<br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolorum maiores dolore
-                            earum, cupiditate corporis optio veniam est illo itaque!
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <section id="packages" class="white-shadow">
-        <div class="row">
-            <h1 class="sec-title"><span class="plussign">+</span> our packages</h1>
-            <div class="container flex" id="packages-container">
-                <div class="package shadow wow fadeInLeftBig" data-wow-delay="0.4s">
-                    <img src="./imges/heir.jpg" alt="">
-                    <h3>Hair Transplant</h3>
-                    <div class="price pb-1">
-                        <div class="italic">
-                            price:
-                        </div>
-                        330$
-                    </div>
-                    <hr>
-                    <ul>
-
-                        <li>Accommodation</li>
-                        <li>visa</li>
-                        <li>transfer</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">see package</a>
-                </div>
-                <div class="package wow fadeInLeftBig" data-wow-delay="0.8s">
-                    <img src="./imges/nose.jpg" alt="">
-                    <h3>Rhinoplasty (nose job)</h3>
-                    <div class="price pb-1">
-                        <div class="italic">
-                            price:
-                        </div>
-                        330$
-                    </div>
-                    <hr>
-                    <ul>
-                        <li>Accommodation</li>
-                        <li>visa</li>
-                        <li>transfer</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">see package</a>
-                </div>
-
-                <div class="package wow fadeInLeftBig" data-wow-delay="1.2s">salam</div>
-
-            </div>
-        </div>
-    </section>
-    <!-- end of stepbystep -->
-
-    <section id="tests">
-        <h1><span class="plussign">+</span>medical tourism</h1>
-        <div id="world">
-            <!-- <img src="svg/plane.svg" id="plane"  alt="" smooth-parallax="" start-position-y="-.7"> -->
-            <img src="/svg/worldmap.svg" id="worldmap" alt="world-map" smooth-parallax="" start-position-y="-.5">
-        </div>
-        <div class="row">
-            <div class="container">
-                <!-- =====ABOUT US & FAQ ====== -->
-                <div id="why-us">
-                    <div>
-                        <h2>parsa healthcare</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur.</p>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>
-                                <h4>why health tourism?</h4>
-                                <hr>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ducimus voluptatibus
-                                    et consectetur debitis? Eligendi molestiae beatae sequi fugiat.</p>
+        </section>
+        <!-- End of video section -->
+        <!-- begin of stepbystep -->
+        <section id="stepbystep">
+            <img src="svg/gooshi.svg" id="gooshi" alt="" style="bottom: -100px;" smooth-parallax=""
+                start-position-y="-.4">
+            <div class="row">
+                <div class="container flex">
+                    <div class="pl-1 py-2" id="steps-title-parent">
+                        <ul id="steps-title">
+                            <li class="step-1 selected">
+                                <span>01</span>
+                                <h4 style="display: inline;"> online support</h4>
                             </li>
-                            <li>
-                                <h4>why us?</h4>
-                                <hr>
-                                <p>Lorem ipsum dolor sit, amet co Dolor ducimus voluptatibus et consectetur debitis?
-                                    Eligendi molestiae beatae sequi fugiat.</p>
+                            <li class="step-2">
+                                <span>02</span>
+                                <h4 style="display: inline;"> medical consultion</h4>
                             </li>
-                            <li>
-                                <h4>goverment regoulation</h4>
-                                <hr>
-                                <p>Voluptatibus et consectetur debitis? Eligendi molestiae beatae sequi fugiat.</p>
+                            <li class="step-3">
+                                <span>03</span>
+                                <h4 style="display: inline;">trip planning</h4>
+                            </li>
+                            <li class="step-4">
+                                <span>04</span>
+                                <h4 style="display: inline;">airport pickup</h4>
+                            </li>
+                            <li class="step-5">
+                                <span>05</span>
+                                <h4 style="display: inline;"> accommodation</h4>
+                            </li>
+                            <li class="step-6">
+                                <span>06</span>
+                                <h4 style="display: inline;">VIP hospitals</h4>
+                            </li>
+
+                            <li class="step-7">
+                                <span>07</span>
+                                <h4 style="display: inline;">recovery</h4>
+                            </li>
+                            <li class="step-8">
+                                <span>08</span>
+                                <h4 style="display: inline;"> sightseeing</h4>
+                            </li>
+                            <li class="step-9">
+                                <span>09</span>
+                                <h4 style="display: inline;">insurance</h4>
+                            </li>
+                            <li class="step-10">
+                                <span>10</span>
+                                <h4 style="display: inline;">keep in touch with doctor</h4>
                             </li>
 
                         </ul>
                     </div>
-                </div>
-                <div id="flag-sec">
-                    <div class="flags-slider">
-                        <div><img src="svg/Arab-Emirates.svg" alt=""></div>
-                        <div><img src="svg/Argentina.svg" alt=""></div>
-                        <div><img src="svg/Argentina.svg" alt=""></div>
-                        <div><img src="svg/Libya.svg" alt=""></div>
-                        <div><img src="svg/Turkey.svg" alt=""></div>
+                    <div id="steps-desc-parent" class="p-1">
+                        <ul id="steps-desc">
+                            <li class="step-1 show">
+                                <img src="svg/call.svg" alt="">
+                                <h3>call expert</h3>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea repudiandae aliquid
+                                    ipsum
+                                    quis aperiam praesentium repellendus vero nobis maxime, numquam tenetur est id,
+                                    nesciunt
+                                    qui, nulla harum nam debitis minima.
+                                    Autem in odit, quidem est aliquam sunt repellat commodi veritatis, eligendi
+                                    perferendis
+
+                                </p>
+                            </li>
+                            <li class="step-2 hide"> Lorem, ipsum dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis eveniet sit non
+                                quo,
+                                obcaecati consectetur? Incidunt, odit perspiciatis quibusdam repellendus minus amet
+                                quidem,
+                                commodi labore in corporis voluptate adipisci dicta!
+                            </li>
+                            <li class="step-3 hide">
+                                Lorem, ipsum.<br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, id?<br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolorum maiores dolore
+                                earum, cupiditate corporis optio veniam est illo itaque!
+                            </li>
+
+                        </ul>
                     </div>
 
-                    <div>
-                        <h2>Lorem ipsum elit voluptas. Ipsa expedita quo?3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis quia
-                            molestiae
-                            nihil ratione natus nostrum nemo corporis. Blanditiis corrupti cum vitae doloribus
-                            perspiciatis,
-                            iste id animi aliquid facere veritatis.</p>
+                </div>
+            </div>
+        </section>
+        <section id="packages" class="white-shadow">
+            <div class="row">
+                <h1 class="sec-title"><span class="plussign">+</span> our packages</h1>
+                <div class="container flex" id="packages-container">
+                    <div class="package shadow wow fadeInLeftBig" data-wow-delay="0.4s">
+                        <img src="./imges/heir.jpg" alt="">
+                        <h3>Hair Transplant</h3>
+                        <div class="price pb-1">
+                            <div class="italic">
+                                price:
+                            </div>
+                            330$
+                        </div>
+                        <hr>
+                        <ul>
+
+                            <li>Accommodation</li>
+                            <li>visa</li>
+                            <li>transfer</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">see package</a>
+                    </div>
+                    <div class="package wow fadeInLeftBig" data-wow-delay="0.8s">
+                        <img src="./imges/nose.jpg" alt="">
+                        <h3>Rhinoplasty (nose job)</h3>
+                        <div class="price pb-1">
+                            <div class="italic">
+                                price:
+                            </div>
+                            330$
+                        </div>
+                        <hr>
+                        <ul>
+                            <li>Accommodation</li>
+                            <li>visa</li>
+                            <li>transfer</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">see package</a>
+                    </div>
+
+                    <div class="package wow fadeInLeftBig" data-wow-delay="1.2s">salam</div>
+
+                </div>
+            </div>
+        </section>
+        <!-- end of stepbystep -->
+
+        <section id="tests">
+            <h1><span class="plussign">+</span>medical tourism</h1>
+            <div id="world">
+                <!-- <img src="svg/plane.svg" id="plane"  alt="" smooth-parallax="" start-position-y="-.7"> -->
+                <img src="/svg/worldmap.svg" id="worldmap" alt="world-map" smooth-parallax="" start-position-y="-.5">
+            </div>
+            <div class="row">
+                <div class="container">
+                    <!-- =====ABOUT US & FAQ ====== -->
+                    <div id="why-us">
+                        <div>
+                            <h2>parsa healthcare</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur.</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4>why health tourism?</h4>
+                                    <hr>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ducimus
+                                        voluptatibus
+                                        et consectetur debitis? Eligendi molestiae beatae sequi fugiat.</p>
+                                </li>
+                                <li>
+                                    <h4>why us?</h4>
+                                    <hr>
+                                    <p>Lorem ipsum dolor sit, amet co Dolor ducimus voluptatibus et consectetur debitis?
+                                        Eligendi molestiae beatae sequi fugiat.</p>
+                                </li>
+                                <li>
+                                    <h4>goverment regoulation</h4>
+                                    <hr>
+                                    <p>Voluptatibus et consectetur debitis? Eligendi molestiae beatae sequi fugiat.</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="flag-sec">
+                        <div class="flags-slider">
+                            <div><img src="svg/Arab-Emirates.svg" alt=""></div>
+                            <div><img src="svg/Argentina.svg" alt=""></div>
+                            <div><img src="svg/Argentina.svg" alt=""></div>
+                            <div><img src="svg/Libya.svg" alt=""></div>
+                            <div><img src="svg/Turkey.svg" alt=""></div>
+                        </div>
+
+                        <div>
+                            <h2>Lorem ipsum elit voluptas. Ipsa expedita quo?3</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis quia
+                                molestiae
+                                nihil ratione natus nostrum nemo corporis. Blanditiis corrupti cum vitae doloribus
+                                perspiciatis,
+                                iste id animi aliquid facere veritatis.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
+        </section>
 
 
-    <section>
-        <h1 class="sec-title"><span class="plussign">+</span> Patient stories</h1>
-        <div class="container">
-            <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+        <section>
+            <h1 class="sec-title"><span class="plussign">+</span> Patient stories</h1>
+            <div class="container">
+                <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 
-                <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="imges/work-samples/photo_2019-07-26_11-56-28.jpg" itemprop="contentUrl"
-                        data-size="900x900">
-                        <img src="imges/work-samples/photo_2019-07-26_11-56-28.jpg" itemprop="thumbnail"
-                            alt="Image description" />
-                    </a>
-                    <figcaption itemprop="caption description">Image caption 2222</figcaption>
+                    <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                        <a href="imges/work-samples/photo_2019-07-26_11-56-28.jpg" itemprop="contentUrl"
+                            data-size="900x900">
+                            <img src="imges/work-samples/photo_2019-07-26_11-56-28.jpg" itemprop="thumbnail"
+                                alt="Image description" />
+                        </a>
+                        <figcaption itemprop="caption description">Image caption 2222</figcaption>
 
-                </figure>
+                    </figure>
 
-                <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="imges/work-samples/photo_2019-07-26_11-56-34.jpg" itemprop="contentUrl"
-                        data-size="900x900">
-                        <img src="imges/work-samples/photo_2019-07-26_11-56-34.jpg" itemprop="thumbnail"
-                            alt="Image description" />
-                    </a>
-                    <figcaption itemprop="caption description">Image caption 2</figcaption>
-                </figure>
+                    <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                        <a href="imges/work-samples/photo_2019-07-26_11-56-34.jpg" itemprop="contentUrl"
+                            data-size="900x900">
+                            <img src="imges/work-samples/photo_2019-07-26_11-56-34.jpg" itemprop="thumbnail"
+                                alt="Image description" />
+                        </a>
+                        <figcaption itemprop="caption description">Image caption 2</figcaption>
+                    </figure>
 
-                <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="imges/work-samples/photo_2019-07-26_11-56-35.jpg" itemprop="contentUrl"
-                        data-size="900x900">
-                        <img src="imges/work-samples/photo_2019-07-26_11-56-35.jpg" itemprop="thumbnail"
-                            alt="Image description" />
-                    </a>
-                    <figcaption itemprop="caption description">Image caption 3</figcaption>
-                </figure>
+                    <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                        <a href="imges/work-samples/photo_2019-07-26_11-56-35.jpg" itemprop="contentUrl"
+                            data-size="900x900">
+                            <img src="imges/work-samples/photo_2019-07-26_11-56-35.jpg" itemprop="thumbnail"
+                                alt="Image description" />
+                        </a>
+                        <figcaption itemprop="caption description">Image caption 3</figcaption>
+                    </figure>
 
-                <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="imges/work-samples/photo_2019-07-26_11-56-45.jpg" itemprop="contentUrl"
-                        data-size="900x900">
-                        <img src="imges/work-samples/photo_2019-07-26_11-56-45.jpg" itemprop="thumbnail"
-                            alt="Image description" />
-                    </a>
-                    <figcaption itemprop="caption description">Image caption 4</figcaption>
-                </figure>
+                    <figure class="b" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                        <a href="imges/work-samples/photo_2019-07-26_11-56-45.jpg" itemprop="contentUrl"
+                            data-size="900x900">
+                            <img src="imges/work-samples/photo_2019-07-26_11-56-45.jpg" itemprop="thumbnail"
+                                alt="Image description" />
+                        </a>
+                        <figcaption itemprop="caption description">Image caption 4</figcaption>
+                    </figure>
 
+                </div>
             </div>
-        </div>
 
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- Root element of PhotoSwipe. Must have class pswp. -->
+            <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-            <!-- Background of PhotoSwipe. 
+                <!-- Background of PhotoSwipe. 
                    It's a separate element, as animating opacity is faster than rgba(). -->
-            <div class="pswp__bg"></div>
+                <div class="pswp__bg"></div>
 
-            <!-- Slides wrapper with overflow:hidden. -->
-            <div class="pswp__scroll-wrap">
+                <!-- Slides wrapper with overflow:hidden. -->
+                <div class="pswp__scroll-wrap">
 
-                <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-                <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-                <div class="pswp__container">
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                </div>
+                    <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                    <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+                    <div class="pswp__container">
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                    </div>
 
-                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                <div class="pswp__ui pswp__ui--hidden">
+                    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                    <div class="pswp__ui pswp__ui--hidden">
 
-                    <div class="pswp__top-bar">
+                        <div class="pswp__top-bar">
 
-                        <!--  Controls are self-explanatory. Order can be changed. -->
+                            <!--  Controls are self-explanatory. Order can be changed. -->
 
-                        <div class="pswp__counter"></div>
+                            <div class="pswp__counter"></div>
 
-                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
-                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                            <button class="pswp__button pswp__button--share" title="Share"></button>
 
-                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 
-                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
-                        <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-                        <!-- element will get class pswp__preloader--active when preloader is running -->
-                        <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                                <div class="pswp__preloader__cut">
-                                    <div class="pswp__preloader__donut"></div>
+                            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                            <!-- element will get class pswp__preloader--active when preloader is running -->
+                            <div class="pswp__preloader">
+                                <div class="pswp__preloader__icn">
+                                    <div class="pswp__preloader__cut">
+                                        <div class="pswp__preloader__donut"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                        <div class="pswp__share-tooltip"></div>
-                    </div>
+                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div class="pswp__share-tooltip"></div>
+                        </div>
 
-                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                    </button>
+                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                        </button>
 
-                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                    </button>
+                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                        </button>
 
-                    <div class="pswp__caption">
-                        <div class="pswp__caption__center"></div>
+                        <div class="pswp__caption">
+                            <div class="pswp__caption__center"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section id="hospitals">
-        <div class="row">
+        <section id="hospitals">
+            <div class="row">
+                <div class="container">
+                    <h1 class="sec-title"><span class="plussign">+</span> hospitals</h1>
+
+                    <div class="hospital-slider">
+                        <a>
+                            <div><img src="imges/h/pastorno.jpg" alt="">
+                                <p>pasto hospital</p>
+                            </div>
+                        </a>
+                        <a>
+                            <div><img src="imges/h/atiye.jpg" alt="">
+                                <p>atiye hospital</p>
+                            </div>
+                        </a>
+                        <a>
+                            <div><img src="imges/h/bahman.jpg" alt="">
+                                <p>bahman hospital</p>
+                            </div>
+                        </a>
+                        <a>
+                            <div><img src="imges/h/farabi.jpg" alt="">
+                                <p>farabi hospital</p>
+                            </div>
+                        </a>
+                        <a>
+                            <div><img src="imges/h/mohebCosar.jpg" alt="">
+                                <p>mohebecosar hospital</p>
+                            </div>
+                        </a>
+                        <a>
+                            <div><img src="imges/h/mohebMehr.jpg" alt="">
+                                <p>mohebe mehr hospital</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- MAP SECTION-->
+        <section id="map-sec">
+
+            <div id="mapid"></div>
+
             <div class="container">
-                <h1 class="sec-title"><span class="plussign">+</span> hospitals</h1>
+                <div id="form">
+                    <h1 class="contact-us-title">contact us</h1>
+                    <form action="" method="POST">
+                        <label for="clientName">Enter your name:</label>
+                        <div class="animated-input">
+                            <input id="clientName" name="clientName" type="text" class="flex-one"
+                                placeholder="  john doe">
+                            <span class="i-bottom"></span>
+                            <span class="i-right"></span>
+                            <span class="i-top"></span>
+                            <span class="i-left"></span>
+                        </div>
 
-                <div class="hospital-slider">
-                    <a>
-                        <div><img src="imges/h/pastorno.jpg" alt="">
-                            <p>pasto hospital</p>
+                        <label for="clientTel">Enter your phone number:</label>
+                        <div class="animated-input">
+                            <input id="clientTel" name="clientTel" type="text" class="flex-one"
+                                placeholder=" +1-202-555-0135">
+                            <span class="i-bottom"></span>
+                            <span class="i-right"></span>
+                            <span class="i-top"></span>
+                            <span class="i-left"></span>
                         </div>
-                    </a>
-                    <a>
-                        <div><img src="imges/h/atiye.jpg" alt="">
-                            <p>atiye hospital</p>
-                        </div>
-                    </a>
-                    <a>
-                        <div><img src="imges/h/bahman.jpg" alt="">
-                            <p>bahman hospital</p>
-                        </div>
-                    </a>
-                    <a>
-                        <div><img src="imges/h/farabi.jpg" alt="">
-                            <p>farabi hospital</p>
-                        </div>
-                    </a>
-                    <a>
-                        <div><img src="imges/h/mohebCosar.jpg" alt="">
-                            <p>mohebecosar hospital</p>
-                        </div>
-                    </a>
-                    <a>
-                        <div><img src="imges/h/mohebMehr.jpg" alt="">
-                            <p>mohebe mehr hospital</p>
-                        </div>
-                    </a>
 
+                        <textarea name="msg" id="" cols="30" rows="5" class="flex-one"
+                            placeholder="Your message here..."></textarea>
+
+                        <button type="submit">SUBMIT</button>
+                    </form>
                 </div>
 
-
             </div>
-        </div>
-    </section>
+        </section>
 
+        <footer>
+            <div class="canvas-container">
 
-
-
-
-
-    <!-- MAP SECTION-->
-    <section id="map-sec">
-
-        <div id="mapid"></div>
-
-        <div class="container">
-            <div id="form">
-                <h1 class="contact-us-title">contact us</h1>
-                <form action="" method="POST">
-                    <label for="clientName">Enter your name:</label>
-                    <div class="animated-input">
-                        <input id="clientName" name="clientName" type="text" class="flex-one" placeholder="  john doe">
-                        <span class="i-bottom"></span>
-                        <span class="i-right"></span>
-                        <span class="i-top"></span>
-                        <span class="i-left"></span>
-                    </div>
-
-                    <label for="clientTel">Enter your phone number:</label>
-                    <div class="animated-input">
-                        <input id="clientTel" name="clientTel" type="text" class="flex-one"
-                            placeholder=" +1-202-555-0135">
-                        <span class="i-bottom"></span>
-                        <span class="i-right"></span>
-                        <span class="i-top"></span>
-                        <span class="i-left"></span>
-                    </div>
-
-                    <textarea name="msg" id="" cols="30" rows="5" class="flex-one"
-                        placeholder="Your message here..."></textarea>
-
-                    <button type="submit">SUBMIT</button>
-                </form>
+                <span id="particles-js"></span>
             </div>
 
-        </div>
-    </section>
+            <div class="footer-item">
+                <h2>
+                    treatments:
+                </h2>
+                <p class="col">
+                    <ul class="col-list">
+                        <li>Rhinoplasty</li>
+                        <li>Weight loss surgery</li>
+                        <li>Hair transplant</li>
+                        <li>cosmetic dentistry</li>
+                        <li>Plastic surgery</li>
+                        <li>eye surgery</li>
+                        <li>Knee replacement</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="footer-item">
+                <h2>doctors </h2>
+                <p class="col">
+                    tempora laboriosam in odio consectetur quo ab dolor accusantium
+                    enim dicta ullam repudiandae corliquid exercitationem alias eligendi obcaecati vero inventore!
+                    Accusamus
+                    at rem
+                    sit reprehenderit culpa porro cupiditate dolorum nulla, reiciendis adipisci incidunt quod ex
+                    officiis
+                    consectetur quo asperiores?
+                </p>
+            </div>
+            <div class="footer-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="footer-item">
+                <h2><mark> contact us</mark></h2>
+                <a href="mailto:a.mahdiyar@lice.com">
 
-    <footer>
-        <div class="canvas-container">
-
-            <span id="particles-js"></span>
-        </div>
-
-        <div class="footer-item">
-            <h2>
-                treatments:
-            </h2>
-            <p class="col">
-                <ul class="col-list">
-                    <li>Rhinoplasty</li>
-                    <li>Weight loss surgery</li>
-                    <li>Hair transplant</li>
-                    <li>cosmetic dentistry</li>
-                    <li>Plastic surgery</li>
-                    <li>eye surgery</li>
-                    <li>Knee replacement</li>
-                </ul>
-            </p>
-        </div>
-        <div class="footer-item">
-            <h2>doctors </h2>
-            <p class="col">
-                tempora laboriosam in odio consectetur quo ab dolor accusantium
-                enim dicta ullam repudiandae corliquid exercitationem alias eligendi obcaecati vero inventore! Accusamus
-                at rem
-                sit reprehenderit culpa porro cupiditate dolorum nulla, reiciendis adipisci incidunt quod ex officiis
-                consectetur quo asperiores?
-            </p>
-        </div>
-        <div class="footer-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-        <div class="footer-item">
-            <h2><mark> contact us</mark></h2>
-            <a href="mailto:a.mahdiyar@lice.com">
-
-                <i class="far fa-envelope"></i>
-                <p>info@parsa-healthcare.com</p>
-            </a>
-            <a href="tel:+989102124368">
-                <i class="fas fa-phone-alt"></i>
-                <p>+98 910-212-4368</p>
-            </a>
-            <a href="#">
-                <i class="fas fa-map-marker-alt"></i>
-                <p>IRAN, Tehran, <br> amet consectetur adipisicing elit. Molestias!</p>
-            </a>
-            <div href="#" class="social">
-                <a href="">
-                    <i class="fab fa-instagram"></i>&nbsp;
+                    <i class="far fa-envelope"></i>
+                    <p>info@parsa-healthcare.com</p>
+                </a>
+                <a href="tel:+989102124368">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+98 910-212-4368</p>
                 </a>
                 <a href="#">
-                    <i class="fab fa-whatsapp"></i>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>IRAN, Tehran, <br> amet consectetur adipisicing elit. Molestias!</p>
                 </a>
+                <div href="#" class="social">
+                    <a href="">
+                        <i class="fab fa-instagram"></i>&nbsp;
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+
             </div>
+            <div class="footer-item"></div>
+        </footer>
 
 
-        </div>
-        <div class="footer-item"></div>
-    </footer>
+        <!-- SCRIPTS -->
+        <!-- vivus -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.js"></script> -->
+        <!-- flags slider -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
+        <!-- particles .js -->
+        <script src="lib/particles.min.js"></script>
+        <!-- wowjs -->
+        <script src="lib/wow.min.js"></script>
+        <!-- photo swipe -->
+        <script src="javascript/photoswipe.min.js"></script>
+        <script src="javascript/photoswipe-ui-default.js"></script>
+        <!-- map : -->
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+        <script src="javascript/mygal.js"></script>
+        <!-- mm menu -->
+        <script src="javascript/mmenu.js"></script>
+        <script>
+            // mapboxgl.accessToken = 'pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg';
+            try {
 
 
-    <!-- SCRIPTS -->
-    <!-- vivus -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.js"></script> -->
-    <!-- flags slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
-    <!-- particles .js -->
-    <script src="lib/particles.min.js"></script>
-    <!-- wowjs -->
-    <script src="lib/wow.min.js"></script>
-    <!-- photo swipe -->
-    <script src="javascript/photoswipe.min.js"></script>
-    <script src="javascript/photoswipe-ui-default.js"></script>
-    <!-- map : -->
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-        crossorigin=""></script>
-    <script src="javascript/mygal.js"></script>
-    <script>
-        // mapboxgl.accessToken = 'pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg';
-        try {
+                var mymap = L.map('mapid').setView([35.806696, 51.464741], 14);
+
+                let ac = "pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg";
+                let kiri = " https://api.mapbox.com/styles/v1/mahdiyar/cjxh729ic372f1cpuwr8stjod/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg";
 
 
-            var mymap = L.map('mapid').setView([35.806696, 51.464741], 14);
+                L.tileLayer(kiri, {
+                    maxZoom: 18,
+                    // attribution: 'mahdiyar',
+                }).addTo(mymap);
 
-            let ac = "pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg";
-            let kiri = " https://api.mapbox.com/styles/v1/mahdiyar/cjxh729ic372f1cpuwr8stjod/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg";
+                var greenIcon = L.icon({
+                    iconUrl: 'png/pin.png',
+                    // shadowUrl: 'svg/pin.svg',
 
-
-            L.tileLayer(kiri, {
-                maxZoom: 18,
-                // attribution: 'mahdiyar',
-            }).addTo(mymap);
-
-            var greenIcon = L.icon({
-                iconUrl: 'png/pin.png',
-                // shadowUrl: 'svg/pin.svg',
-
-                // iconSize: [38, 95], // size of the icon
-                iconSize: [56, 56], // size of the icon
-                // shadowSize: [50, 64], // size of the shadow
-                iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-                shadowAnchor: [4, 62],  // the same for the shadow
-                popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
-            });
-            L.marker([35.806696, 51.464741], { icon: greenIcon }).addTo(mymap);
-        } catch (e) {
-            console.log('e', e)
-        }
-    </script>
-    <!-- myscript: -->
-    <script src="javascript/index.js"></script>
+                    // iconSize: [38, 95], // size of the icon
+                    iconSize: [56, 56], // size of the icon
+                    // shadowSize: [50, 64], // size of the shadow
+                    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+                    shadowAnchor: [4, 62],  // the same for the shadow
+                    popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+                });
+                L.marker([35.806696, 51.464741], { icon: greenIcon }).addTo(mymap);
+            } catch (e) {
+                console.log('e', e)
+            }
+        </script>
+        <!-- myscript: -->
+        <script src="javascript/index.js"></script>
+    </div>
 </body>
 
 </html>
