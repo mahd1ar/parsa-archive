@@ -9,6 +9,7 @@ document.addEventListener('scroll', e => {
 
 //flags scrolling
 window.onload = () => {
+    console.info("DOC loaded")
     let slider = tns({
         container: '.flags-slider',
         items: 4,
@@ -78,11 +79,11 @@ try {
 }
 
 //humberger menu
-const xbtn = document.querySelector('#x');
-xbtn.addEventListener('click', (e) => {
-    console.log('e', e);
-    document.querySelector('nav').classList.toggle('swupDown')
-})
+// const xbtn = document.querySelector('#x');
+// xbtn.addEventListener('click', (e) => {
+//     console.log('e', e);
+//     document.querySelector('nav').classList.toggle('swupDown')
+// })
 
 
 // step by step

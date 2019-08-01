@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="lib/reset.css">
     <!-- debug -->
     <link rel="stylesheet" href="lib/debug.css">
-    <!-- my stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/923e628944.js"></script>
     <!-- map -->
@@ -27,6 +25,8 @@
     <link rel="stylesheet" href="lib/default-skin/default-skin.css">
     <!-- flag slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
+    <!-- my stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body debu>
@@ -81,14 +81,14 @@
 
 
         <!-- main navbar -->
-        <div id="smallmenu" class="Sticky">
-            <span id="x"><i class="fas fa-bars"></i></span>
-            <a href="#menu" id="parsa-small" class="no-select">
+        <div id="smallmenu" class="Sticky shadow">
+            <a href="#menu" id="x" class="no-select"><i class="fas fa-bars"></i></a>
+            <a id="parsa-small" class="no-select">
                 <img src="png/logo.png" alt="" class="no-select">
             </a>
         </div>
         <nav>
-            <div class="container" id="nav-and-logo">
+            <div class="container shadow" id="nav-and-logo">
                 <a href="/" id="parsa">
                     <img src="png/logo.png" width="170px" alt="">
                 </a>
@@ -265,7 +265,7 @@
             <img src="svg/gooshi.svg" id="gooshi" alt="" style="bottom: -100px;" smooth-parallax=""
                 start-position-y="-.4">
             <div class="row">
-                <div class="container flex">
+                <div class="container flex" id="steps-title-desc">
                     <div class="pl-1 py-2" id="steps-title-parent">
                         <ul id="steps-title">
                             <li class="step-1 selected">

@@ -121,6 +121,9 @@ html {
             padding: 1rem 2rem;
         }
     }
+    &:active {
+        color: inherit;
+    }
 }
 .swupDown {
     transform: translateY(0);
@@ -458,11 +461,21 @@ span.call-us {
     @include widescreen() {
         right: 0px;
     }
+    @include medium() {
+        display: none;
+    }
+}
+#steps-title-desc {
     @include tablet() {
+        flex-direction: column;
     }
 }
 #steps-title-parent {
     flex: 1;
+    @include tablet() {
+        padding: 0;
+        margin: 0;
+    }
 }
 ul#steps-title {
     text-transform: uppercase;
@@ -474,12 +487,30 @@ ul#steps-title {
         h4 {
             font-size: 1.2rem;
         }
+        @include tablet() {
+            width: 40%;
+        }
+        @include small() {
+            width: 90%;
+        }
+    }
+
+    @include tablet() {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @include small() {
+        flex-direction: column;
     }
 }
 #steps-desc-parent {
     flex: 3;
     align-self: flex-start;
     border-left: 2px solid #ccc;
+    @include tablet() {
+        width: 100%;
+    }
 }
 ul#steps-desc {
     position: relative;
@@ -488,7 +519,6 @@ ul#steps-desc {
         position: absolute;
         top: 1rem;
         left: 3rem;
-
         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
         img {
             display: inline-block;
@@ -510,6 +540,9 @@ ul#steps-desc {
             width: 70%;
             color: #555;
             font-size: 22px;
+            @include tablet() {
+                width: 90%;
+            }
         }
     }
 }
@@ -525,6 +558,12 @@ ul#steps-desc {
     color: $primary;
     margin-left: 8px;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    @include tablet() {
+        margin: 0;
+    }
+    @include small() {
+        margin-left: 8px;
+    }
 }
 //========= END oF STEPS
 
@@ -740,9 +779,15 @@ ul#steps-desc {
 }
 
 #world {
+    display: none;
     z-index: -1;
     position: absolute;
     width: 100%;
+    @include tablet() {
+        left: -35%;
+        width: 150%;
+    }
+
 }
 #why-us {
     display: flex;
@@ -750,6 +795,9 @@ ul#steps-desc {
     padding-top: 1.4rem;
     margin-bottom: 4rem;
     align-items: center;
+    @include medium() {
+        flex-direction: column;
+    }
     & > :first-child {
         flex: 3;
         h2 {
@@ -777,26 +825,45 @@ ul#steps-desc {
 }
 #tns1-ow {
     width: 600px;
+    background-color: #fff;
+    @include desktop() {
+        width: 70%;
+        text-align: center;
+    }
 }
 #flag-sec {
+    background-color: #fff;
     display: flex;
     flex-direction: row-reverse;
     padding-left: 1.4rem;
     padding-top: 1.4rem;
     margin-bottom: 4rem;
     align-items: flex-end;
+    @include desktop() {
+        flex-direction: column;
+        align-items: center;
+    }
     // & > :first-child {
     // }
     & > :nth-child(2) {
         flex: 1;
         width: 340px;
+        @include desktop() {
+            width: 100%;
+        }
         h2 {
             text-transform: capitalize;
             font-size: 2.45rem;
             margin-bottom: 2.4rem;
+            @include desktop() {
+                margin: 2rem 0;
+            }
         }
         p {
             font-size: 1.35rem;
+            @include desktop() {
+                padding: 0 2rem;
+            }
         }
     }
 }
@@ -819,12 +886,18 @@ ul#steps-desc {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include desktop() {
+        justify-content: space-evenly;
+    }
     img {
         flex-wrap: wrap;
         width: 100%;
         height: auto;
         filter: grayscale(0.7) brightness(120%);
         transition: all 0.3s ease-in-out;
+        @include desktop() {
+            margin-top: 1rem;
+        }
         &:hover {
             filter: none;
         }
