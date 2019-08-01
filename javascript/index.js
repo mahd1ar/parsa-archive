@@ -29,7 +29,7 @@ window.onload = () => {
     let hospitals = tns({
         container: '.hospital-slider',
         items: 4,
-        slideBy: 'page',
+        // slideBy: 'page',
         autoplay: true,
         autoplayHoverPause: true,
         autoplayTimeout: 4000,
