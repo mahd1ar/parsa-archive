@@ -5,6 +5,7 @@ $primary-dark: darken(#005dff, 40%);
 $accent: #fff6bb;
 
 // responsive layout
+$supersmall: 411px;
 $small: 576px;
 $medium: 768px;
 $tablet: 840px;
@@ -13,6 +14,16 @@ $navbarbreack: 995px;
 $widescreen: 1200px;
 $superwidescreen: 1400px;
 
+@mixin phone {
+    @media (max-height: #{812px}) {
+        @content;
+    }
+}
+@mixin supersmall {
+    @media (max-width: #{$supersmall}) {
+        @content;
+    }
+}
 @mixin small {
     @media (max-width: #{$small}) {
         @content;
@@ -57,6 +68,7 @@ $superwidescreen: 1400px;
 @import 'global';
 
 @import 'animista';
+@import 'loader';
 
 // top navbar
 #top-navbar-content {
@@ -452,6 +464,7 @@ span.call-us {
 //---------------STEP BY STEP------------
 #stepbystep {
     position: relative;
+    background-color: #fff;
 }
 #gooshi {
     position: absolute;
@@ -514,12 +527,15 @@ ul#steps-title {
 }
 ul#steps-desc {
     position: relative;
-    height: 50vh;
+    height: 474px;
     li {
         position: absolute;
         top: 1rem;
         left: 3rem;
         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        @include supersmall(){
+            left: 1rem;
+        }
         img {
             display: inline-block;
             width: 70px;
@@ -533,6 +549,12 @@ ul#steps-desc {
             text-transform: uppercase;
             padding-left: 2rem;
             margin-bottom: 1rem;
+            @include supersmall(){
+                border-bottom: #00b6e5 3px solid;
+                margin-left: 0.75rem;
+                padding: 0;
+
+            }
         }
         p {
             align-self: center;
@@ -586,6 +608,9 @@ ul#steps-desc {
     width: 250px;
     margin: 16px 0;
     transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    @include small(){
+        width: 230px;
+    }
     img {
         position: relative;
         display: inline-block;
@@ -625,6 +650,9 @@ ul#steps-desc {
 //========= map-sec
 #mapid {
     height: 600px;
+    @include tablet(){
+        height: 300px;
+    }
 }
 .contact-us-title {
     position: absolute;
@@ -642,6 +670,12 @@ ul#steps-desc {
     color: aliceblue;
     transform: translateY(-450px);
     position: absolute;
+    
+    @include tablet(){
+        position: relative;
+        transform: none;
+        width: 100%;
+    }
     form {
         display: flex;
         flex-direction: column;
@@ -769,6 +803,9 @@ ul#steps-desc {
 // ==========TESTS
 #tests {
     position: relative;
+    @include tablet(){
+     overflow-x: hidden;   
+    }
     h1 {
         margin-top: 2rem;
         font-size: 3rem;
@@ -830,6 +867,9 @@ ul#steps-desc {
         width: 70%;
         text-align: center;
     }
+    @include supersmall(){
+        width: 90%;
+    }
 }
 #flag-sec {
     background-color: #fff;
@@ -842,6 +882,9 @@ ul#steps-desc {
     @include desktop() {
         flex-direction: column;
         align-items: center;
+    }
+    @include supersmall(){
+        padding: 0;
     }
     // & > :first-child {
     // }
@@ -858,6 +901,11 @@ ul#steps-desc {
             @include desktop() {
                 margin: 2rem 0;
             }
+            @include supersmall(){
+                padding: 0 20px;
+                text-align: center;
+                font-size: 2rem;
+            }
         }
         p {
             font-size: 1.35rem;
@@ -867,7 +915,12 @@ ul#steps-desc {
         }
     }
 }
-
+#patient{
+  background-color: #fff;
+  background-image: url('/svg/textur.svg');
+  background-size: 230px;
+  padding-bottom: 36px;
+}
 //WORK SAMPLE
 // #sample-sec{
 // height: 200px;
@@ -890,6 +943,8 @@ ul#steps-desc {
         justify-content: space-evenly;
     }
     img {
+        padding: 5px;
+        background: #fff;
         flex-wrap: wrap;
         width: 100%;
         height: auto;

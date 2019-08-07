@@ -26,26 +26,44 @@ window.onload = () => {
         controlsContainer: false
     });
 
-    let hospitals = tns({
-        container: '.hospital-slider',
-        items: 4,
-        // slideBy: 'page',
-        autoplay: true,
-        autoplayHoverPause: true,
-        autoplayTimeout: 4000,
-        gutter: 50,
-        speed: 1200,
-        autoplayText: false,
-        autoplayButtonOutput: false,
-        // autoplayButton: false,
-        mouseDrag: true,
-        swipeAngle: false,
-        controlsContainer: false
-    });
 
-    document.querySelectorAll('[aria-label').forEach(x => {
-        x.style.display = "none"
-    })
+    function desideTns() {
+        let ts = {
+            container: '.hospital-slider',
+            items: 4,
+            autoplay: true,
+            autoplayHoverPause: true,
+            autoplayTimeout: 4000,
+            gutter: 50,
+            speed: 1200,
+            autoplayText: false,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            swipeAngle: false,
+            controlsContainer: false
+        }
+
+
+        if (window.innerWidth < 768) {
+            ts.items = 3;
+            if (window.innerWidth < 576) {
+                ts.items = 2;
+            }
+        }
+
+
+        let hospitals = tns(ts);
+
+        document.querySelectorAll('[aria-label').forEach(x => {
+            x.style.display = "none"
+        })
+    }
+    desideTns();
+
+    setTimeout(() => {
+        document.querySelector('#loader').style.clipPath = "circle(0% at 50% 50%)";
+    }, 2000);
+
 
     //mm menu
     new Mmenu(document.querySelector('#menu'), {
@@ -55,6 +73,17 @@ window.onload = () => {
     });
 
 }
+
+
+
+
+
+    try {
+        new WOW().init();
+    } catch (e) {
+        console.log(`WOW is not working Err: ${e}`)
+    }
+
 
 
 //an other parallex
@@ -71,12 +100,7 @@ try {
 }
 
 //wow
-try {
 
-    new WOW().init();
-} catch (e) {
-    console.log(`WOW is not working Err: ${e}`)
-}
 
 //humberger menu
 // const xbtn = document.querySelector('#x');
@@ -114,7 +138,9 @@ document.querySelector('#steps-title').addEventListener('click', e => {
             }
 
         })
-
-
+        if (window.innerWidth < 577) {
+            let to = window.pageYOffset + 300;
+            window.scrollTo(0, to);
+        }
     }
 })
