@@ -7,12 +7,12 @@
   position: fixed;
   top: 0;
   opacity: 0.8;
-  clip-path: circle(114% at 50% 0%);
+  clip-path: circle(114% at 50% 50%);
   transition: all 1s cubic-bezier(1,.06,.33,1.01);
 span{
-  background-color: #fff;
-  color: #114;
-  padding: 1rem;
+ color: #fff;
+ 
+  padding: 0.7rem;
   border-radius: 5px;
   z-index: 900;
   opacity: 1;
@@ -127,3 +127,4 @@ span{
    }
     
   }
+

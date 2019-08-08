@@ -23,10 +23,11 @@ window.onload = () => {
         // autoplayButton: false,
         mouseDrag: true,
         swipeAngle: false,
-        controlsContainer: false
+        // controlsContainer: false,
+        controls: false,
     });
-
-
+    
+    
     function desideTns() {
         let ts = {
             container: '.hospital-slider',
@@ -40,7 +41,8 @@ window.onload = () => {
             autoplayButtonOutput: false,
             mouseDrag: true,
             swipeAngle: false,
-            controlsContainer: false
+            // controlsContainer: false
+            controls: false,
         }
 
 
@@ -54,23 +56,39 @@ window.onload = () => {
 
         let hospitals = tns(ts);
 
-        document.querySelectorAll('[aria-label').forEach(x => {
-            x.style.display = "none"
-        })
     }
-    desideTns();
+    try {
+        
+        desideTns();
+    } catch (error) {
+        alert(error);
+    }
 
     setTimeout(() => {
-        document.querySelector('#loader').style.clipPath = "circle(0% at 50% 50%)";
+        try {
+           if( CSS.supports("clip-path","circle(0% at 50% 50%)")){
+               document.querySelector('#loader').style['clip-path'] = "circle(0% at 50% 50%)";
+            }else{
+                document.querySelector('#loader').style['display'] = "none";
+            }
+        } catch (error) {
+            console.log(error)
+            document.querySelector('#loader').style['display'] = "none";
+        }
+        // document.querySelector('#loader').style={display :"none"};
     }, 2000);
 
+    try {
+        //mm menu
+        new Mmenu(document.querySelector('#menu'), {
+            "extensions": [
+                "pagedim-black"
+            ]
+        });
 
-    //mm menu
-    new Mmenu(document.querySelector('#menu'), {
-        "extensions": [
-            "pagedim-black"
-        ]
-    });
+    } catch (error) {
+        alert('error :', error);
+    }
 
 
 

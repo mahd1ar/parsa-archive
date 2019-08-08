@@ -523,16 +523,15 @@ body {
   position: fixed;
   top: 0;
   opacity: 0.8;
-  -webkit-clip-path: circle(114% at 50% 0%);
-          clip-path: circle(114% at 50% 0%);
+  -webkit-clip-path: circle(114% at 50% 50%);
+          clip-path: circle(114% at 50% 50%);
   -webkit-transition: all 1s cubic-bezier(1, 0.06, 0.33, 1.01);
   transition: all 1s cubic-bezier(1, 0.06, 0.33, 1.01);
 }
 
 #loader span {
-  background-color: #fff;
-  color: #114;
-  padding: 1rem;
+  color: #fff;
+  padding: 0.7rem;
   border-radius: 5px;
   z-index: 900;
   opacity: 1;
@@ -2077,5 +2076,13 @@ footer .col-list li {
 .canvas-container {
   width: 50vw;
   position: absolute;
+}
+
+.tns-nav {
+  display: none;
+}
+
+.tns-controls {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
