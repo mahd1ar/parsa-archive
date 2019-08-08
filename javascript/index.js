@@ -85,7 +85,10 @@ window.onload = () => {
                 "pagedim-black"
             ]
         });
-        menu.closePanle
+        const api = menu.API;
+        const panel = document.querySelector("#menu");
+        api.closePanel(panel);
+
     } catch (error) {
         console.log('error :', error);
     }
