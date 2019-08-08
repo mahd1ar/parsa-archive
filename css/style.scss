@@ -90,6 +90,9 @@ $superwidescreen: 1400px;
 
 .top-nav-right {
     position: relative;
+    @include small(){
+        display: none;
+    }
 }
 html {
     scroll-behavior: smooth;
@@ -172,6 +175,7 @@ nav {
 }
 #parsa {
     display: block;
+    width: 150px;
     @include navbarbreack() {
         display: none;
     }
@@ -327,7 +331,7 @@ span.call-us {
 #srv-section {
     position: relative;
     position: relative;
-    background-color: rgba(238, 238, 238, 0.35);
+    background-color: #f9f9f9;
 
     h1 {
         text-align: center;

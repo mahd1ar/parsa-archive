@@ -93,13 +93,7 @@
                     <img src="png/logo.png" width="170px" alt="">
                 </a>
                 <ul class="list">
-                    <div id="close" onclick="
-                document.querySelector('nav').classList.add('fade-out-bck');
-                setTimeout(() => {
-                    document.querySelector('nav').classList.remove('fade-out-bck');
-                    document.querySelector('nav').classList.remove('swupDown');
-                }, 700);
-                "><i class="fas fa-times"></i></div>
+
 
                     <a href="#">
                         <li class="list-item">about us</li>
@@ -155,7 +149,7 @@
                 The assist patients in accessing high quality medical care in Iran
                 <br>
                 <a href="tel:+989102124368">
-                    <button class="call wow slideInLeft" data-wow-duration="1s" data-wow-delay="0s">
+                    <button class="call wow slideInLeft">
                         <span class="call-us">call us:</span>
                         <i class="fas fa-phone-alt"></i>
                         <span> +98 910-212-4368</span>
@@ -626,7 +620,7 @@
             <div class="container">
                 <div id="form">
                     <h1 class="contact-us-title">contact us</h1>
-                    <form action="" method="POST">
+                    <form action="" method="POST" autocomplete="off">
                         <label for="clientName">Enter your name:</label>
                         <div class="animated-input">
                             <input id="clientName" name="clientName" type="text" class="flex-one"
@@ -646,7 +640,7 @@
                             <span class="i-top"></span>
                             <span class="i-left"></span>
                         </div>
-
+<input type="hidden" name="" style="display: none" autocomplete="off">
                         <textarea name="msg" id="" cols="30" rows="5" class="flex-one"
                             placeholder="Your message here..."></textarea>
 
@@ -721,12 +715,11 @@
             <div class="footer-item"></div>
         </footer>
         <div id="loader">
+                <span>parsa healthcare</span>
             <div class="pulse"></div>
         </div>
 
         <!-- SCRIPTS -->
-        <!-- vivus -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.js"></script> -->
         <!-- flags slider -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
         <!-- particles .js -->
@@ -776,7 +769,7 @@
             }
         </script>
         <!-- myscript: -->
-        <script src="javascript/index.js"></script>
+        <script src="javascript/index.es5.js"></script>
     </div>
 </body>
 
