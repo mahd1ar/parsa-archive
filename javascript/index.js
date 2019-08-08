@@ -26,8 +26,8 @@ window.onload = () => {
         // controlsContainer: false,
         controls: false,
     });
-    
-    
+
+
     function desideTns() {
         let ts = {
             container: '.hospital-slider',
@@ -58,7 +58,7 @@ window.onload = () => {
 
     }
     try {
-        
+
         desideTns();
     } catch (error) {
         alert(error);
@@ -66,9 +66,9 @@ window.onload = () => {
 
     setTimeout(() => {
         try {
-           if( CSS.supports("clip-path","circle(0% at 50% 50%)")){
-               document.querySelector('#loader').style['clip-path'] = "circle(0% at 50% 50%)";
-            }else{
+            if (CSS.supports("clip-path", "circle(0% at 50% 50%)")) {
+                document.querySelector('#loader').style['clip-path'] = "circle(0% at 50% 50%)";
+            } else {
                 document.querySelector('#loader').style['display'] = "none";
             }
         } catch (error) {
@@ -80,14 +80,14 @@ window.onload = () => {
 
     try {
         //mm menu
-        new Mmenu(document.querySelector('#menu'), {
+        let menu = new Mmenu(document.querySelector('#menu'), {
             "extensions": [
                 "pagedim-black"
             ]
         });
-
+        menu.closePanle
     } catch (error) {
-        alert('error :', error);
+        console.log('error :', error);
     }
 
 

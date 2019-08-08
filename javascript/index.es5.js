@@ -76,11 +76,12 @@ window.onload = () => {
 
   try {
     //mm menu
-    new Mmenu(document.querySelector('#menu'), {
+    let menu = new Mmenu(document.querySelector('#menu'), {
       "extensions": ["pagedim-black"]
     });
+    menu.closePanle;
   } catch (error) {
-    alert('error :', error);
+    console.log('error :', error);
   }
 
   try {
