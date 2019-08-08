@@ -1,14 +1,14 @@
-// paralex scroll plus
-const plus = document.getElementById('plus');
-x = plus.style.bottom.split('px');
-document.addEventListener('scroll', e => {
-    let offset = window.pageYOffset / 3;
-    offset += Number(x[0])
-    plus.style.bottom = `${offset}px`;
-})
-
-//flags scrolling
 window.onload = () => {
+    // paralex scroll plus
+    const plus = document.getElementById('plus');
+    x = plus.style.bottom.split('px');
+    document.addEventListener('scroll', e => {
+        let offset = window.pageYOffset / 3;
+        offset += Number(x[0])
+        plus.style.bottom = `${offset}px`;
+    })
+
+    //flags scrolling
     console.info("DOC loaded")
     let slider = tns({
         container: '.flags-slider',
@@ -72,9 +72,6 @@ window.onload = () => {
         ]
     });
 
-}
-
-
 
 
 
@@ -86,61 +83,53 @@ window.onload = () => {
 
 
 
-//an other parallex
-SmoothParallax.init();
-// document.designMode = "on"
+    //an other parallex
+    SmoothParallax.init();
+    // document.designMode = "on"
 
-//----- particles --------
-try {
-    particlesJS.load('particles-js', 'lib/particlesjs.json', function () {
-        console.log('callback - particles.js config loaded');
-    });
-} catch (e) {
-    console.log(e)
-}
-
-//wow
-
-
-//humberger menu
-// const xbtn = document.querySelector('#x');
-// xbtn.addEventListener('click', (e) => {
-//     console.log('e', e);
-//     document.querySelector('nav').classList.toggle('swupDown')
-// })
-
-
-// step by step
-
-document.querySelector('#steps-title').addEventListener('click', e => {
-    c = e.target.parentElement.classList.value
-    regex = /step-\d/g;
-    if (regex.test(c)) {
-        d = document.querySelectorAll(`.${c}`);
-        target = d[1].classList[1];
-        if (target == 'hide') {
-            f = document.querySelectorAll('#steps-desc>li')
-            f.forEach(elem => {
-                elem.classList.remove('show')
-                elem.classList.add('hide')
-            });
-            d[1].classList.remove('hide')
-            d[1].classList.add('show')
-        }
-        console.log(e.path[2].children)
-        Array.from(e.path[2].children).forEach(i => {
-
-            if (e.target.parentElement == i) {
-                console.log('i :', i);
-                i.classList.add('selected')
-            } else if (i.classList.contains('selected')) {
-                i.classList.remove('selected')
-            }
-
-        })
-        if (window.innerWidth < 577) {
-            let to = window.pageYOffset + 300;
-            window.scrollTo(0, to);
-        }
+    //----- particles --------
+    try {
+        particlesJS.load('particles-js', 'lib/particlesjs.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    } catch (e) {
+        console.log(e)
     }
-})
+
+
+
+    // step by step
+
+    document.querySelector('#steps-title').addEventListener('click', e => {
+        c = e.target.parentElement.classList.value
+        regex = /step-\d/g;
+        if (regex.test(c)) {
+            d = document.querySelectorAll(`.${c}`);
+            target = d[1].classList[1];
+            if (target == 'hide') {
+                f = document.querySelectorAll('#steps-desc>li')
+                f.forEach(elem => {
+                    elem.classList.remove('show')
+                    elem.classList.add('hide')
+                });
+                d[1].classList.remove('hide')
+                d[1].classList.add('show')
+            }
+            console.log(e.path[2].children)
+            Array.from(e.path[2].children).forEach(i => {
+
+                if (e.target.parentElement == i) {
+                    console.log('i :', i);
+                    i.classList.add('selected')
+                } else if (i.classList.contains('selected')) {
+                    i.classList.remove('selected')
+                }
+
+            })
+            if (window.innerWidth < 577) {
+                let to = window.pageYOffset + 300;
+                window.scrollTo(0, to);
+            }
+        }
+    })
+}
