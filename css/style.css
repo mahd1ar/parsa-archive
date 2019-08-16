@@ -518,11 +518,11 @@ body {
 #loader {
   width: 100vw;
   height: 100vh;
-  background-image: radial-gradient(circle farthest-corner at 10% 20%, #27c7ab 0%, #468fc5 90%);
+  background-image: radial-gradient(circle farthest-corner at 14.7% 26.3%, #79ced4 0.2%, #65a7bf 89.5%);
   z-index: 899;
   position: fixed;
   top: 0;
-  opacity: 0.8;
+  opacity: 1;
   -webkit-clip-path: circle(114% at 50% 50%);
           clip-path: circle(114% at 50% 50%);
   -webkit-transition: all 1s cubic-bezier(1, 0.06, 0.33, 1.01);
@@ -539,7 +539,7 @@ body {
   top: 55%;
   left: 50%;
   position: absolute;
-  font-size: 2rem;
+  font-size: 1.6rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -1029,7 +1029,8 @@ nav {
   position: absolute;
   width: 350px;
   left: calc(20vw - 350px);
-  z-index: -1;
+  -webkit-transition: all 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: all 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 @media (max-width: 1200px) {
@@ -1194,7 +1195,6 @@ nav {
 
 #stepbystep {
   position: relative;
-  background-color: #fff;
 }
 
 #gooshi {
@@ -1202,6 +1202,8 @@ nav {
   width: 350px;
   right: 100px;
   z-index: -1;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 @media (max-width: 1200px) {
@@ -1722,6 +1724,11 @@ ul#steps-desc li p {
   text-transform: capitalize;
   letter-spacing: 0.8rem;
   text-align: center;
+}
+
+#worldmap {
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 #world {

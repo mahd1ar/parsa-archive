@@ -4,8 +4,11 @@ window.onload = () => {
   x = plus.style.bottom.split('px');
   document.addEventListener('scroll', e => {
     let offset = window.pageYOffset / 3;
-    offset += Number(x[0]);
-    plus.style.bottom = `${offset}px`;
+
+    if (offset % 2) {
+      offset += Number(x[0]);
+      plus.style.bottom = `${offset}px`;
+    }
   }); //flags scrolling
 
   console.info("DOC loaded");
@@ -65,23 +68,21 @@ window.onload = () => {
       if (CSS.supports("clip-path", "circle(0% at 50% 50%)")) {
         document.querySelector('#loader').style['clip-path'] = "circle(0% at 50% 50%)";
       } else {
-        document.querySelector('#loader').style['display'] = "none";
+        document.querySelector('#loader').style['opacity'] = "0";
       }
     } catch (error) {
       console.log(error);
-      document.querySelector('#loader').style['display'] = "none";
-    } // document.querySelector('#loader').style={display :"none"};
-
-  }, 2000);
+      document.querySelector('#loader').style['opacity'] = "0";
+    }
+  }, 500);
 
   try {
     //mm menu
-    let menu = new Mmenu(document.querySelector('#menu'), {
+    const menu = new Mmenu(document.querySelector('#menu'), {
       "extensions": ["pagedim-black"]
     });
     const api = menu.API;
-    const panel = document.querySelector("#menu");
-    api.closePanel(panel);
+    api.closeAllPanels;
   } catch (error) {
     console.log('error :', error);
   }
