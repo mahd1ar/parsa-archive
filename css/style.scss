@@ -446,12 +446,14 @@ span.call-us {
         letter-spacing: 0.4rem;
     }
     h3 {
+      
         @include tablet() {
             font-size: 2.2rem;
             margin-bottom: 1rem;
         }
     }
 }
+
 #vid-desc {
     @include tablet() {
         flex-direction: column-reverse;
@@ -461,6 +463,9 @@ span.call-us {
         flex: 1;
         @include tablet() {
             width: 100%;
+        }
+        h3{
+            font-size: 2rem;
         }
     }
 }
@@ -804,7 +809,7 @@ ul#steps-desc {
         transform: scaleY(1);
     }
 }
-// ==========TESTS
+//==========TESTS
 #tests {
     position: relative;
     @include tablet() {
@@ -820,7 +825,7 @@ ul#steps-desc {
 }
 
 #worldmap {
-    transition: all 1s ease-out;
+    transition: all 400ms ease;
 }
 
 #world {

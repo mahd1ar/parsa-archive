@@ -1193,6 +1193,10 @@ nav {
   }
 }
 
+#vid-desc div h3 {
+  font-size: 2rem;
+}
+
 #stepbystep {
   position: relative;
 }
@@ -1727,8 +1731,8 @@ ul#steps-desc li p {
 }
 
 #worldmap {
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
 }
 
 #world {
