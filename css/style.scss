@@ -446,7 +446,6 @@ span.call-us {
         letter-spacing: 0.4rem;
     }
     h3 {
-      
         @include tablet() {
             font-size: 2.2rem;
             margin-bottom: 1rem;
@@ -464,7 +463,7 @@ span.call-us {
         @include tablet() {
             width: 100%;
         }
-        h3{
+        h3 {
             font-size: 2rem;
         }
     }
@@ -824,9 +823,9 @@ ul#steps-desc {
     }
 }
 
-#worldmap {
-    transition: all 400ms ease;
-}
+// #worldmap {
+// transition: all 400ms ease;
+// }
 
 #world {
     // display: none;
@@ -884,7 +883,6 @@ ul#steps-desc {
     }
 }
 #flag-sec {
-    background-color: #fff;
     display: flex;
     flex-direction: row-reverse;
     padding-left: 1.4rem;
@@ -932,6 +930,10 @@ ul#steps-desc {
     background-image: url('/svg/textur.svg');
     background-size: 230px;
     padding-bottom: 36px;
+    h1 {
+        margin-bottom: 0;
+        padding-top: 2rem;
+    }
 }
 //WORK SAMPLE
 // #sample-sec{
@@ -1013,36 +1015,67 @@ ul#steps-desc {
 //===========FOOTER SEC =========>
 
 footer {
-    height: 30rem;
+    // height: 30rem;
     background: url('/png/footer.png') center right/contain repeat-y;
     background-color: #353d3d;
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+    overflow-y: hidden;
     @include superwidescreen() {
         background-position-x: 46vw;
     }
     @include widescreen() {
-        background-position-x: 42vw;
+        background-position-x: 10vw;
+    }
+    @include small() {
+        background-image: none;
     }
     .footer-item {
         margin-top: 2.8rem;
         color: #adb5bd;
         width: 370px;
+        flex-grow: 0;
+        flex-shrink: 0;
         padding: 1.7rem;
         padding-right: 0rem;
         overflow-y: hidden;
+        @include widescreen() {
+            margin-left: 2rem;
+            width: calc(50% - 2rem);
+        }
+        @include tablet() {
+            width: 40%;
+            margin-top: 1rem;
+            padding: 0;
+            margin-left: 2rem;
+        }
+        @include small() {
+            width: calc(100% - 2rem);
+        }
+
+        &:last-child {
+            @include widescreen() {
+                margin-top: 0;
+            }
+        }
     }
     .footer-item:nth-child(2) {
         text-transform: capitalize;
     }
-    .footer-item:last-child {
-        padding: 0;
-        width: auto;
-    }
+
     h2 {
         text-transform: capitalize;
         border-left: #01abde 3px solid;
         border-radius: 2px;
         padding-left: 6px;
+        &::after {
+            @include small() {
+                content: ' . . . . . . . . . . . . . . ';
+                overflow: hidden;
+            }
+        }
     }
     a {
         display: inline-block;
@@ -1076,15 +1109,65 @@ footer {
     }
 }
 .social {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
     a {
         display: inline-block;
+        cursor: pointer;
+        z-index: 2;
     }
 }
 .canvas-container {
     width: 50vw;
     position: absolute;
+    @include small() {
+        width: 90vh;
+        transform: rotate(270deg);
+        transform-origin: bottom;
+    }
 }
+.instagram,
+.whatsapp {
+    padding: 8px 20px;
+    border-radius: 8px;
+    margin: 4px 1rem;
+    margin-left: 0;
+    color: #fff;
+    &::after {
+        font-size: 20px;
+    }
+}
+.instagram {
+    border: rgba(158, 0, 177, 1) 3px solid;
+    color: #e7aaef;
+    @include tablet() {
+        background: rgb(158, 0, 177);
+        background: linear-gradient(
+            90deg,
+            rgba(158, 0, 177, 1) 0%,
+            rgba(242, 0, 8, 1) 100%
+        );
+        color: #fff;
+        border: none;
+    }
+    &::after {
+        content: 'INSTAGRAM';
+    }
+}
+.whatsapp {
+    border: #2eb342 3px solid;
+    color: #a9ffb6;
+    @include tablet() {
+        color: #fff;
+        background-color: #2eb342;
+        border: none;
+    }
 
+    &::after {
+        content: ' WHATSAPP';
+    }
+}
 ////others
 .tns-nav {
     display: none;

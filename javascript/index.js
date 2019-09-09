@@ -77,9 +77,14 @@ window.onload = () => {
         } catch (error) {
             console.log(error)
             document.querySelector('#loader').style['opacity'] = "0";
+        } finally{
+            setTimeout(() => {
+                
+                document.querySelector('#loader').style.display = 'none';
+            }, 2000);
         }
 
-    }, 500);
+    }, 200);
 
     try {
         //mm menu
@@ -111,7 +116,6 @@ window.onload = () => {
 
     //an other parallex
     SmoothParallax.init();
-    // document.designMode = "on"
 
     //----- particles --------
     try {
