@@ -77,9 +77,9 @@ window.onload = () => {
         } catch (error) {
             console.log(error)
             document.querySelector('#loader').style['opacity'] = "0";
-        } finally{
+        } finally {
             setTimeout(() => {
-                
+
                 document.querySelector('#loader').style.display = 'none';
             }, 2000);
         }
@@ -162,4 +162,34 @@ window.onload = () => {
             }
         }
     })
+
+    // fuckin map box
+    // mapboxgl.accessToken = 'pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg';
+    try {
+
+
+        var mymap = L.map('mapid').setView([35.806696, 51.464741], 14);
+
+        let ac = "pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg";
+        let apikey = " https://api.mapbox.com/styles/v1/mahdiyar/cjxh729ic372f1cpuwr8stjod/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFoZGl5YXIiLCJhIjoiY2pweWk2ZnlqMDFoaTQ5bnhqZ3E3ejYxaiJ9.rFfS4mSOcPBkUa7od8-Vbg";
+
+
+        L.tileLayer(apikey, {
+            maxZoom: 18,
+            // attribution: 'mahdiyar',
+        }).addTo(mymap);
+
+        var greenIcon = L.icon({
+            iconUrl: 'png/pin.png',
+
+            iconSize: [56, 56], // size of the icon
+            // shadowSize: [50, 64], // size of the shadow
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        L.marker([35.806696, 51.464741], { icon: greenIcon }).addTo(mymap);
+    } catch (e) {
+        console.log('e', e)
+    }
 }
