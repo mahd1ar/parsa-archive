@@ -1310,7 +1310,8 @@ ul#steps-title li h4 {
 
 ul#steps-desc {
   position: relative;
-  height: 474px;
+  height: 600px;
+  overflow: hidden;
 }
 
 ul#steps-desc li {
@@ -1364,6 +1365,10 @@ ul#steps-desc li p {
   ul#steps-desc li p {
     width: 90%;
   }
+}
+
+ul#steps-desc li::after {
+  content: 'LKLKL';
 }
 
 .hide {

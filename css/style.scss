@@ -536,7 +536,9 @@ ul#steps-title {
 }
 ul#steps-desc {
     position: relative;
-    height: 474px;
+    // height: 474px;
+    height: 600px;
+    overflow: hidden;
     li {
         position: absolute;
         top: 1rem;
@@ -573,6 +575,9 @@ ul#steps-desc {
             @include tablet() {
                 width: 90%;
             }
+        }
+        &::after{
+            content: 'LKLKL';
         }
     }
 }
